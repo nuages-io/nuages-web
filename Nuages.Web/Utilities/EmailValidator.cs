@@ -36,3 +36,15 @@ public class EmailValidator : IEmailValidator
             RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
     }
 }
+
+public static class EmailValidatorConfig
+{
+    // ReSharper disable once UnusedMethodReturnValue.Global
+    // ReSharper disable once UnusedMember.Global
+    public static IServiceCollection AddEmailValidator(this IServiceCollection services)
+    {
+        services.AddTransient<IEmailValidator, EmailValidator>();
+
+        return services;
+    }
+}
