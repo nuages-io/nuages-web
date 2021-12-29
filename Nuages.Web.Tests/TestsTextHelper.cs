@@ -14,5 +14,6 @@ public class TestsTextHelper
         string value = "éêôâàèîûù";
         
         Assert.Equal("eeoaaeiuu", TextHelper.RemoveAccents(value));
+        Assert.True(false);
     }
 }
