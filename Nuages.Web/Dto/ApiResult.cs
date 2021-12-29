@@ -5,8 +5,11 @@
 // ReSharper disable MemberCanBeProtected.Global
 // ReSharper disable MemberCanBePrivate.Global
 
+using System.Diagnostics.CodeAnalysis;
+
 namespace Nuages.Web.Dto;
 
+[ExcludeFromCodeCoverage]
 public class ApiResult
 {
    

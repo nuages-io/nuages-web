@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -148,6 +149,7 @@ namespace Nuages.Web.Utilities;
         }
     }
     
+[ExcludeFromCodeCoverage]
 public static class EncryptionConfig
 {
     // ReSharper disable once UnusedMethodReturnValue.Global

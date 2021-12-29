@@ -14,6 +14,7 @@ namespace Nuages.Web.S3;
 #endregion
 
 // ReSharper disable once UnusedType.Global
+[ExcludeFromCodeCoverage]
 public class S3CloudStorage : IS3CloudStorage
 {
     private readonly IAmazonS3 _s3;

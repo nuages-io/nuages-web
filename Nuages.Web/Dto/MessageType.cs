@@ -1,4 +1,7 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace Nuages.Web.Dto;
+
 
 public enum MessageType
 {

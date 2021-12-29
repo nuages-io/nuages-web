@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
@@ -21,13 +22,20 @@ public class EmailValidator : IEmailValidator
         // Examines the domain part of the email and normalizes it.
         static string DomainMapper(Match match)
         {
-            // Use IdnMapping class to convert Unicode domain names.
-            var idn = new IdnMapping();
+            try
+            {
+                // Use IdnMapping class to convert Unicode domain names.
+                var idn = new IdnMapping();
 
-            // Pull out and process domain name (throws ArgumentException on invalid)
-            var domainName = idn.GetAscii(match.Groups[2].Value);
+                // Pull out and process domain name (throws ArgumentException on invalid)
+                var domainName = idn.GetAscii(match.Groups[2].Value);
 
-            return match.Groups[1].Value + domainName;
+                return match.Groups[1].Value + domainName;
+            }
+            catch (Exception)
+            {
+                return string.Empty;
+            }
         }
 
         return Regex.IsMatch(email,
@@ -37,6 +45,7 @@ public class EmailValidator : IEmailValidator
     }
 }
 
+[ExcludeFromCodeCoverage]
 public static class EmailValidatorConfig
 {
     // ReSharper disable once UnusedMethodReturnValue.Global
