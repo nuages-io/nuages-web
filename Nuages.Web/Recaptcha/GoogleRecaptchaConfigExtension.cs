@@ -15,7 +15,7 @@ public static class GoogleRecaptchaConfigExtension
     {
         if (configuration != null)
         {
-            services.Configure<GoogleRecaptchaOptions>(configuration.GetSection("Nuages:Web:GoogleRecaptacha"));
+            services.Configure<GoogleRecaptchaOptions>(configuration.GetSection("Nuages:Web:GoogleRecaptcha"));
         }
         
         if (configure != null)
