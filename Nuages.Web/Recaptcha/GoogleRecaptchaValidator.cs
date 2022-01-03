@@ -20,13 +20,13 @@ public class GoogleRecaptchaValidator : IRecaptchaValidator
     public async Task<bool> ValidateAsync(string? token)
     {
      
-        if (string.IsNullOrEmpty(_options.Key))
+        if (string.IsNullOrEmpty(_options.SecretKey))
             return string.IsNullOrEmpty(token);
            
         var httpClient = _clientFactory.CreateClient();
 
         var res = await httpClient.GetAsync(
-            $"https://www.google.com/recaptcha/api/siteverify?secret={_options.Key}&response={token}");
+            $"https://www.google.com/recaptcha/api/siteverify?secret={_options.SecretKey}&response={token}");
 
         if (res.StatusCode != HttpStatusCode.OK)
         {

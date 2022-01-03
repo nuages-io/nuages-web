@@ -5,5 +5,6 @@ namespace Nuages.Web.Recaptcha;
 [ExcludeFromCodeCoverage]
 public class GoogleRecaptchaOptions
 {
-    public string Key { get; set; } = String.Empty;
+    public string SiteKey { get; set; } = String.Empty;
+    public string SecretKey { get; set; } = String.Empty;
 }
