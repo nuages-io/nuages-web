@@ -11,7 +11,7 @@ public class TestsTextHelper
     {
         Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         
-        string value = "éêôâàèîûù";
+        const string value = "éêôâàèîûù";
         
         Assert.Equal("eeoaaeiuu", TextHelper.RemoveAccents(value));
     }

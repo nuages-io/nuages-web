@@ -1,6 +1,6 @@
 namespace Nuages.Web.Utilities;
 
-public class TextHelper
+public static class TextHelper
 {
     public static string RemoveAccents(string text)
     {

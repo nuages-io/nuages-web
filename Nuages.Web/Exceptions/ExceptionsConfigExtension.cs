@@ -51,7 +51,7 @@ public static class ExceptionsConfig
                     case NotAuthorizedException:
                     {
                         context.Response.StatusCode = (int) HttpStatusCode.Forbidden;
-                        error = localizer.GetString(NotAuthorized)!;
+                        error = localizer.GetString(NotAuthorized);
                         await context.Response.WriteAsync(
                             JsonSerializer.Serialize(GetErrorMessage(error, localizer), settings));
                         break;
@@ -72,7 +72,7 @@ public static class ExceptionsConfig
                     default:
                     {
                         context.Response.StatusCode = 500;
-                        error = localizer.GetString(UnknownError)!;
+                        error = localizer.GetString(UnknownError);
                         await context.Response.WriteAsync(
                             JsonSerializer.Serialize(GetErrorMessage(error, localizer), settings));
                         break;
@@ -89,7 +89,7 @@ public static class ExceptionsConfig
         ex.Errors.ForEach(e =>
         {
             var message = e.NeedLocalization
-                ? string.Format(localizer.GetString(e.Message)!, e.Arguments)
+                ? string.Format(localizer.GetString(e.Message), e.Arguments)
                 : string.Format(e.Message, e.Arguments);
 
             errors.Add(new MessageInfo
@@ -112,7 +112,7 @@ public static class ExceptionsConfig
         errors.Add(new MessageInfo
         {
             Code = error,
-            Message = message!
+            Message = message
         });
 
         return new ApiResult {Errors = errors};

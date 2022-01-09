@@ -8,7 +8,7 @@ public class TestEmailValidator
     [Fact]
     public void SHouldValidateEMail()
     {
-        var emailValidator = new EmailValidator();
+        IEmailValidator emailValidator = new EmailValidator();
         
         Assert.True(emailValidator.IsValidEmail("m@m.io"));
         Assert.False(emailValidator.IsValidEmail("m@.io"));

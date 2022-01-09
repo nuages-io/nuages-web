@@ -1,7 +1,7 @@
 using System.Net;
 using System.Text.Json;
 using Microsoft.Extensions.Options;
-using Nuages.Web.Exceptions;
+
 // ReSharper disable MemberCanBePrivate.Global
 
 namespace Nuages.Web.Recaptcha;

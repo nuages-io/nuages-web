@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 namespace Nuages.Web.Exceptions;
 
 [ExcludeFromCodeCoverage]
+// ReSharper disable once UnusedType.Global
 public class ArgumentNullOrEmptyException : Exception
 {
     private const string ArgumentIsNullOrEmpty = "Argment is null or empty";

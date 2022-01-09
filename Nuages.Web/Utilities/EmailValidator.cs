@@ -46,6 +46,7 @@ public class EmailValidator : IEmailValidator
 }
 
 [ExcludeFromCodeCoverage]
+// ReSharper disable once UnusedType.Global
 public static class EmailValidatorConfig
 {
     // ReSharper disable once UnusedMethodReturnValue.Global

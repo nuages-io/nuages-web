@@ -18,6 +18,7 @@ public class ApiResult
             
     }
 
+    // ReSharper disable once UnusedMember.Global
     public ApiResult(bool success)
     {
         Success = success;

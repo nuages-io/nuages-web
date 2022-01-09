@@ -1,3 +1,4 @@
+// ReSharper disable UnusedMember.Global
 namespace Nuages.Web.S3;
 
 #region

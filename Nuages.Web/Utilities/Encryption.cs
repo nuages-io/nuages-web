@@ -21,7 +21,7 @@ namespace Nuages.Web.Utilities;
             byte[] saltBytes = {1, 2, 3, 4, 5, 6, 7, 8};
             using MemoryStream ms = new();
 
-            using Aes aes = Aes.Create();
+            using var aes = Aes.Create();
 
             var key = new Rfc2898DeriveBytes(passwordBytes, saltBytes, 1000);
             aes.Key = key.GetBytes(aes.KeySize / 8);
@@ -44,7 +44,7 @@ namespace Nuages.Web.Utilities;
 
             using MemoryStream ms = new();
 
-            using Aes aes = Aes.Create();
+            using var aes = Aes.Create();
             var key = new Rfc2898DeriveBytes(passwordBytes, saltBytes, 1000);
             aes.Key = key.GetBytes(aes.KeySize / 8);
             aes.IV = key.GetBytes(aes.BlockSize / 8);
@@ -150,7 +150,8 @@ namespace Nuages.Web.Utilities;
     }
     
 [ExcludeFromCodeCoverage]
-public static class EncryptionConfig
+// ReSharper disable once UnusedType.Global
+public static class EncryptionConfigExtension
 {
     // ReSharper disable once UnusedMethodReturnValue.Global
     // ReSharper disable once UnusedMember.Global

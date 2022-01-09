@@ -5,6 +5,7 @@
 namespace Nuages.Web.Exceptions;
 
 // ReSharper disable once UnusedType.Global
+// ReSharper disable once ClassNeverInstantiated.Global
 public class ValidationException : Exception
 {
     // ReSharper disable once MemberCanBePrivate.Global
