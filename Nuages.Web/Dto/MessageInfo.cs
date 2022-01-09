@@ -1,8 +1,11 @@
 ﻿// ReSharper disable UnusedMember.Global
 
+using System.Diagnostics.CodeAnalysis;
+
 namespace Nuages.Web.Dto;
 
 // ReSharper disable once ClassNeverInstantiated.Global
+[ExcludeFromCodeCoverage]
 public class MessageInfo
 {
     // ReSharper disable once UnusedAutoPropertyAccessor.Global
