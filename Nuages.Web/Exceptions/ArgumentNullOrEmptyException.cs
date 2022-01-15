@@ -33,6 +33,11 @@ public class ArgumentNullOrEmptyException : Exception
         {
             Throw(paramName);
         }
+        
+        if (argument.ToString() == "")
+        {
+            Throw(paramName);
+        } 
     }
 
     [DoesNotReturn]
