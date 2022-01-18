@@ -7,6 +7,11 @@ public static class ControllerExtensions
 {
     public static string? Sub(this Controller controller)
     {
-        return controller.User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var res = controller.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        if (!string.IsNullOrEmpty(res))
+            return res;
+        
+        return controller.User.FindFirstValue("sub");
     }
 }
