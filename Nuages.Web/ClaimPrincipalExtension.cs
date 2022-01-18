@@ -6,6 +6,11 @@ public static class ClaimPrincipalExtension
 {
     public static string? Sub(this ClaimsPrincipal principal)
     {
-        return principal.FindFirstValue(ClaimTypes.NameIdentifier);
+        var res = principal.FindFirstValue(ClaimTypes.NameIdentifier);
+        
+        if (!string.IsNullOrEmpty(res))
+            return res;
+        
+        return principal.FindFirstValue("sub");
     }
 }
