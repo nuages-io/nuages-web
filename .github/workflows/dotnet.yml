@@ -13,12 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-   # - name: Get secret 
-    #  env:
-    #    NUGETKEY: ${{ secrets.NUGETKEY }}
-    #  run: |
-    #    echo $NUGETKEY
-      #  echo ${{secrets.YOUR_SECRET }} | sed 's/./& /g'
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
@@ -31,8 +25,6 @@ jobs:
       run: dotnet test Nuages.Web.Tests/Nuages.Web.Tests.csproj 
     - name: Pack
       run: dotnet pack Nuages.Web/Nuages.Web.csproj --output ./nupkgs
-    #- name: AddSource
-    #  run: dotnet nuget list source
     - name: Push
       run: dotnet nuget push ./nupkgs/*.nupkg -k ${{ secrets.NUGETKEY }} -s nuget.org
       
