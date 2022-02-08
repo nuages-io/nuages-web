@@ -36,6 +36,6 @@ jobs:
     - name: Push
       run: |
         cd Nuages.Web
-        dotnet nuget push nupkgs/*.nupkg -k ${{ secrets.NUGETKEY }} -s nuget.org
+        dotnet nuget push ./nupkgs/*.nupkg -k ${{ secrets.NUGETKEY }} -s nuget.org
       
    
