@@ -21,6 +21,7 @@
 
     <ItemGroup>
         <PackageReference Include="AWSSDK.S3" Version="3.7.7.5" />
+        <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.15.1" />
     </ItemGroup>
     
     <ItemGroup>
