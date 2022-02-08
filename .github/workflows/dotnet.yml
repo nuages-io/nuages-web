@@ -30,10 +30,10 @@ jobs:
     - name: Test
       run: dotnet test Nuages.Web.Tests/Nuages.Web.Tests.csproj 
     - name: Pack
-      run: dotnet pack Nuages.Web/Nuages.Web.csproj  --no-build --output ./nupkgs/Nuages.Web.nupkg 
+      run: dotnet pack Nuages.Web/Nuages.Web.csproj  --no-build --output nupkgs/Nuages.Web.nupkg 
     #- name: AddSource
     #  run: dotnet nuget list source
     - name: Push
-      run: dotnet nuget push ./nupkgs/Nuages.Web.nupkg -k ${{ secrets.NUGETKEY }} -s nuget.org
+      run: dotnet nuget push Nuages.Web/nupkgs/Nuages.Web.nupkg -k ${{ secrets.NUGETKEY }} -s nuget.org
       
    
