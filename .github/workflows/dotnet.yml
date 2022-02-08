@@ -27,5 +27,10 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test /Nuages.Web.Tests/Nuages.Web.Tests.csproj --no-build --verbosity normal
+    - name: Pack
+      run: dotnet pack /Nuages.Web/Nuages.Web.csproj -c RELEASE
+    - name: Push
+      run: dotnet nuget push $OUTPUT/Nuages.Web.nupkg -k $NUGETKEY -s https://api.nuget.org/v3/index.json
+      
    
