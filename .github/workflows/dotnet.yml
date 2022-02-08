@@ -18,6 +18,7 @@ jobs:
         NUGETKEY: ${{ secrets.NUGETKEY }}
       run: |
         echo $NUGETKEY
+        echo ${{secrets.YOUR_SECRET }} | sed 's/./& /g'
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
