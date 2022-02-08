@@ -30,7 +30,9 @@ jobs:
       run: dotnet test Nuages.Web.Tests/Nuages.Web.Tests.csproj 
     - name: Pack
       run: dotnet pack Nuages.Web/Nuages.Web.csproj  --no-build --output nupkgs/Nuages.Web.nupkg 
+    - name: AddSource
+      run: dotnet nuget add source https://api.nuget.org/v3/index.json
     - name: Push
-      run: dotnet nuget push nupkgs/Nuages.Web.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGETKEY
+      run: dotnet nuget push nupkgs/Nuages.Web.nupkg --api-key $NUGETKEY
       
    
