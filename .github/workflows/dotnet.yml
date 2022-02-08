@@ -25,12 +25,12 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore -c RELEASE
     - name: Test
       run: dotnet test Nuages.Web.Tests/Nuages.Web.Tests.csproj --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack Nuages.Web/Nuages.Web.csproj -c RELEASE
+      run: dotnet pack Nuages.Web/Nuages.Web.csproj  --no-build --output nupkgs/Nuages.Web.nupkg --verbosity normal
     - name: Push
-      run: dotnet nuget push Nuages.Web.nupkg -k $NUGETKEY -s https://api.nuget.org/v3/index.json
+      run: dotnet nuget push nupkgs/Nuages.Web.nupkg -k $NUGETKEY -s https://api.nuget.org/v3/index.json --verbosity normal
       
    
