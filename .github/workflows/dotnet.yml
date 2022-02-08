@@ -32,7 +32,7 @@ jobs:
         echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
         echo ${VERSION}
     - name: Pack
-      run: dotnet pack Nuages.Web/Nuages.Web.csproj --output ./nupkgs /p:Version=${VERSION}
+      run: dotnet pack Nuages.Web/Nuages.Web.csproj --output ./nupkgs -p:PackageVersion=${VERSION}
     - name: Push
       run: dotnet nuget push ./nupkgs/*.nupkg -k ${{ secrets.NUGETKEY }} -s nuget.org
       
