@@ -31,6 +31,6 @@ jobs:
     - name: Pack
       run: dotnet pack Nuages.Web/Nuages.Web.csproj  --no-build --output nupkgs/Nuages.Web.nupkg 
     - name: Push
-      run: dotnet nuget push nupkgs/Nuages.Web.nupkg --s https://api.nuget.org/v3/index.json --k $NUGETKEY
+      run: dotnet nuget push nupkgs/Nuages.Web.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGETKEY
       
    
