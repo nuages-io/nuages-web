@@ -34,6 +34,6 @@ jobs:
     #- name: AddSource
     #  run: dotnet nuget list source
     - name: Push
-      run: dotnet nuget push Nuages.Web/nupkgs/Nuages.Web.nupkg -k ${{ secrets.NUGETKEY }} -s nuget.org
+      run: dotnet nuget push nupkgs/Nuages.Web.nupkg -k ${{ secrets.NUGETKEY }} -s nuget.org
       
    
