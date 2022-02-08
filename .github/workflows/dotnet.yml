@@ -28,7 +28,9 @@ jobs:
     - name: Test
       run: dotnet test Nuages.Web.Tests/Nuages.Web.Tests.csproj 
     - name: Set VERSION variable from tag
-      run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+      run: |
+        echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+        echo ${VERSION}
     - name: Pack
       run: dotnet pack Nuages.Web/Nuages.Web.csproj --output ./nupkgs /p:Version=${VERSION}
     - name: Push
