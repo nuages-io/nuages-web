@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Nuages.Web.Tests;
 
-public class UnitTest1
+public class TestsEncryption
 {
     [Fact]
     public void EncryptAndDecrypt()
