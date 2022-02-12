@@ -1,4 +1,7 @@
 // ReSharper disable UnusedMember.Global
+
+using System.Runtime.CompilerServices;
+
 namespace Nuages.Web;
 
 // ReSharper disable once UnusedType.Global
@@ -11,7 +14,7 @@ public class TraceMonitor : ITraceMonitor
         _logger = logger;
     }
     
-    public void BeginSegment(string? name = null, DateTime? timestamp = null)
+    public void BeginSegment([CallerMemberName] string name = "", DateTime? timestamp = null)
     {
         _logger.LogInformation($"Begin segment {name} {timestamp}");
     }
@@ -29,7 +32,7 @@ public class TraceMonitor : ITraceMonitor
 
 public interface ITraceMonitor
 {
-    void BeginSegment(string? name = null, DateTime? timestamp = null);
+    void BeginSegment([CallerMemberName] string name = "", DateTime? timestamp = null);
     void EndSegment();
     void LogException(Exception exception);
 }
