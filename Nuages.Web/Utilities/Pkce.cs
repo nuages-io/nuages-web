@@ -11,6 +11,7 @@ namespace Nuages.Web.Utilities;
 /// Provides a randomly generating PKCE code verifier and it's corresponding code challenge.
 /// </summary>
 // ReSharper disable once ClassNeverInstantiated.Global
+// ReSharper disable once UnusedType.Global
 public class Pkce
 {
     /// <summary>
