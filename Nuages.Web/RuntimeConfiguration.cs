@@ -17,6 +17,23 @@ public class RuntimeConfiguration : IRuntimeConfiguration
     public bool IsTest => false;
 }
 
+public class RuntimeTestsConfiguration : IRuntimeConfiguration
+{
+    public bool IsDebug
+    {
+        get
+        {
+#if DEBUG
+            return true;
+#else
+            return false;
+#endif
+        }
+    }
+
+    public bool IsTest => true;
+}
+
 public interface IRuntimeConfiguration
 {
     bool IsDebug { get; }

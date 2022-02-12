@@ -18,4 +18,18 @@ public class TestsRuntimeConfiguration
         
         Assert.False(config.IsTest);
     }
+    
+    [Fact]
+    public void ShouldTestTestRuntimeCOnfigurationWithSuccess()
+    {
+        IRuntimeConfiguration config = new RuntimeTestsConfiguration();
+        
+#if DEBUG
+        Assert.True(config.IsDebug);
+#else
+        Assert.False(config.IsDebug);
+#endif
+        
+        Assert.True(config.IsTest);
+    }
 }
