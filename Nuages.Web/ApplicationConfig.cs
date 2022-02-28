@@ -2,8 +2,8 @@ namespace Nuages.Web;
 
 public class ApplicationConfig
 {
-    public ParameterStore? ParameterStore { get; set; }
-    public AppConfig? AppConfig { get; set; }
+    public ParameterStore ParameterStore { get; set; } = new();
+    public AppConfig AppConfig { get; set; } = new();
 }
 
 public class ParameterStore
