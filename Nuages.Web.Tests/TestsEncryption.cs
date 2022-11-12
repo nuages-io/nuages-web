@@ -17,7 +17,7 @@ public class TestsEncryption
         var encryptedValue = encryption.Encrypt(value, key);
         var decryptedValue = encryption.Decrypt(encryptedValue, key);
 
-        Assert.Equal(decryptedValue, value);
+        Assert.Equal(value, decryptedValue);
     }
 
     [Fact]
@@ -31,6 +31,6 @@ public class TestsEncryption
         var encryptedValue = encryption.EncryptWithSalt(value, key);
         var decryptedValue = encryption.DecryptWithSalt(encryptedValue, key);
 
-        Assert.Equal(decryptedValue, value);
+        Assert.Equal(value, decryptedValue);
     }
 }
