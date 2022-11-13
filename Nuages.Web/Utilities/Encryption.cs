@@ -23,7 +23,7 @@ namespace Nuages.Web.Utilities;
 
             using var aes = Aes.Create();
 
-            var key = new Rfc2898DeriveBytes(passwordBytes, saltBytes, 1000);
+            var key = new Rfc2898DeriveBytes(passwordBytes, saltBytes, 1000, HashAlgorithmName.SHA256);
             aes.Key = key.GetBytes(aes.KeySize / 8);
             aes.IV = key.GetBytes(aes.BlockSize / 8);
             aes.Mode = CipherMode.CBC;
@@ -45,7 +45,7 @@ namespace Nuages.Web.Utilities;
             using MemoryStream ms = new();
 
             using var aes = Aes.Create();
-            var key = new Rfc2898DeriveBytes(passwordBytes, saltBytes, 1000);
+            var key = new Rfc2898DeriveBytes(passwordBytes, saltBytes, 1000, HashAlgorithmName.SHA256);
             aes.Key = key.GetBytes(aes.KeySize / 8);
             aes.IV = key.GetBytes(aes.BlockSize / 8);
             aes.Mode = CipherMode.CBC;
