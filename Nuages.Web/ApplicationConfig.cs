@@ -1,5 +1,7 @@
+// ReSharper disable UnusedMember.Global
 namespace Nuages.Web;
 
+// ReSharper disable once UnusedType.Global
 public class ApplicationConfig
 {
     public ParameterStore ParameterStore { get; set; } = new();

@@ -1,5 +1,6 @@
 namespace Nuages.Web;
 
+// ReSharper disable once UnusedType.Global
 public static class CorsConfigExtensions
 {
     // ReSharper disable once MemberCanBePrivate.Global
